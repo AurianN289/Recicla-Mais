@@ -6,6 +6,8 @@ import br.com.reciclamais.Usuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class UsuarioService implements UsuarioIService {
@@ -23,6 +25,10 @@ public class UsuarioService implements UsuarioIService {
             usuarioRepository.save(usuario);
         }
     }
-    
+
+    @Override
+    public List<Usuario> findAll() throws RuntimeException{
+        return usuarioRepository.findAll();
+    }
     
 }
