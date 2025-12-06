@@ -1,7 +1,7 @@
 package br.com.reciclamais;
 
-import br.com.reciclamais.curso.controller.CursoIController;
-import br.com.reciclamais.curso.entity.Curso;
+import br.com.reciclamais.Usuario.controller.UsuarioIController;
+import br.com.reciclamais.Usuario.entity.Usuario;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,14 +11,14 @@ public class Application {
     
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(Application.class, args);
-            
-        Curso curso = new Curso();
-        curso.setNome("cscsc");
-        curso.setCodCurso("c");
-        curso.setAtivo(true);
 
-        CursoIController cursoController = context.getBean(CursoIController.class);
-        cursoController.save(curso);
+        Usuario user = new  Usuario();
+        user.setNome("aurian");
+        user.setSenha("123456");
+        user.setEmail("aurian@ifba.com");
+
+        UsuarioIController control =  context.getBean(UsuarioIController.class);
+        control.save(user);
     }
 
 }
