@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UsuarioController {
 
-    private UsuarioIService usuarioService;
+    private final UsuarioIService usuarioService;
+
 
     @GetMapping(path="/findall", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> findAll(){

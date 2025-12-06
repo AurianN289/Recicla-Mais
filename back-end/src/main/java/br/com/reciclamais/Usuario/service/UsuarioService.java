@@ -15,6 +15,10 @@ public class UsuarioService implements UsuarioIService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    public UsuarioService(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
+
     @Override
     public void save(Usuario usuario) throws RuntimeException{
         if(usuario == null){
