@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from '../components/sidebar';
+import { useNavigate } from 'react-router-dom';
 
 function AdminHome() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="d-flex">
-      
+
       <Sidebar />
 
       <div className="container-fluid p-4">
@@ -48,10 +52,35 @@ function AdminHome() {
           </div>
         </div>
 
+        <div className="card shadow mb-4">
+          <div className="card-body">
+            <h5 className="mb-3">Ações Rápidas</h5>
+
+            <div className="d-flex gap-3 flex-wrap">
+              <button
+                className="btn btn-success"
+                onClick={() => navigate('/residuos/cadastrar')}
+              >
+                + Cadastrar Resíduo
+              </button>
+
+              <button className="btn btn-outline-success" disabled>
+                + Cadastrar Ponto de Coleta
+              </button>
+
+              <button className="btn btn-outline-secondary" disabled>
+                Ver Solicitações
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="card shadow">
           <div className="card-body">
             <h5>Últimas Solicitações de Coleta</h5>
-            <p className="text-muted">Aqui você pode listar as solicitações mais recentes.</p>
+            <p className="text-muted">
+              Aqui você pode listar as solicitações mais recentes.
+            </p>
           </div>
         </div>
 
