@@ -10,6 +10,7 @@ public interface UsuarioIService {
     
     public abstract void save(Usuario usuario) throws RuntimeException;
 
-
     public abstract List<Usuario> findAll() throws RuntimeException;
+
+    Usuario login(String email, String senha) throws RuntimeException;
 }

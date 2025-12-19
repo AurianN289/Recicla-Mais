@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -34,5 +35,25 @@ public class UsuarioService implements UsuarioIService {
     public List<Usuario> findAll() throws RuntimeException{
         return usuarioRepository.findAll();
     }
-    
+
+    @Override
+    public Usuario login(String email, String senha) {
+
+        if (email == null || senha == null) {
+            throw new RuntimeException("Email ou senha vazios");
+        }
+
+        Usuario usuario = usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        if (!usuario.getSenha().equals(senha)) {
+            throw new RuntimeException("Senha inválida");
+        }
+
+        // não devolver senha
+        usuario.setSenha(null);
+        return usuario;
+    }
+
+
 }
