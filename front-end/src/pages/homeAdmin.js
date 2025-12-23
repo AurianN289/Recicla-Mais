@@ -57,6 +57,7 @@ function AdminHome() {
             <h5 className="mb-3">Ações Rápidas</h5>
 
             <div className="d-flex gap-3 flex-wrap">
+
               <button
                 className="btn btn-success"
                 onClick={() => navigate('/residuos/cadastrar')}
@@ -64,8 +65,17 @@ function AdminHome() {
                 + Cadastrar Resíduo
               </button>
 
-              <button className="btn btn-outline-success" disabled>
+              <button 
+                className="btn btn-success" 
+                onClick={() => navigate('/pontos-coleta/cadastrar')}
+              >
                 + Cadastrar Ponto de Coleta
+              </button>
+
+              <button className="btn btn-success" 
+                onClick={() => navigate('/cartazes/cadastrar')}
+              >
+                + Cadastrar Cartaz Informativo
               </button>
 
               <button className="btn btn-outline-secondary" disabled>
