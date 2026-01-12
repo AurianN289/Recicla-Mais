@@ -21,7 +21,7 @@ function RegisterLocais() {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/pontos-coleta/save', {
+      const response = await fetch('http://localhost:8080/pontodecoleta/save', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

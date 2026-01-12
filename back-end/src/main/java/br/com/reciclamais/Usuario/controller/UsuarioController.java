@@ -26,7 +26,7 @@ public class UsuarioController {
     @PostMapping(path="/save", consumes = MediaType.APPLICATION_JSON_VALUE,  produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> save(@RequestBody Usuario usuario){
 
-        System.out.println("usuario: " + usuario);
+
 
         usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuario);

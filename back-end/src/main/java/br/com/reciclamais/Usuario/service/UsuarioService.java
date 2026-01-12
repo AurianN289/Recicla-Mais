@@ -46,6 +46,8 @@ public class UsuarioService implements UsuarioIService {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
+
+
         if (!usuario.getSenha().equals(senha)) {
             throw new RuntimeException("Senha inválida");
         }

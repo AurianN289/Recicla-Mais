@@ -40,6 +40,7 @@ function Login(){
 
             if (usuario.tipoUsuario === 'ADMIN') {
                 navigate('/admin');
+                console.log("tentou entrar em admin")
             }
 
         } catch (error) {

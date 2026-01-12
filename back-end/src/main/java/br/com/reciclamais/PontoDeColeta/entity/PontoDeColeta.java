@@ -1,4 +1,4 @@
-package br.com.reciclamais.PontosDeColeta.entity;
+package br.com.reciclamais.PontoDeColeta.entity;
 
 import br.com.reciclamais.infraestructure.entity.PersistenceEntity;
 import jakarta.persistence.Column;
@@ -9,7 +9,7 @@ import lombok.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "pontos_coleta")
+@Table(name = "pontodecoleta")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
