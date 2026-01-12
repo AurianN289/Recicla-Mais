@@ -10,6 +10,7 @@ function Register(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
+    const [tipoUsuario, setTipoUsuario] = useState('');
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -22,7 +23,9 @@ function Register(){
         const usuario = {
             nome: nome,
             email: email,
-            senha: senha
+            senha: senha,
+            tipousuario: tipoUsuario
+
         };
 
         try{
@@ -32,12 +35,13 @@ function Register(){
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(usuario)
+                
             });
-    
+            console.log(JSON.stringify(usuario));
             if (response.ok) {
                 alert("Usuário registrado com sucesso!");
             } else {
-                alert("Erro ao registrar usuário");
+                alert("Erro ao registrar usuáriooo");
             }
 
         } catch (error) {
@@ -105,6 +109,22 @@ function Register(){
                             required
                         />
                     </div>
+
+                    <div className="mb-3">
+                        <label htmlFor="tipoUsuario" className="form-label">Tipo de Usuário</label>
+                        <select
+                            className="form-select"
+                            id="tipoUsuario"
+                            value={tipoUsuario}
+                            onChange={(e) => setTipoUsuario(e.target.value)}
+                            required
+                        >
+                            <option value="">Selecione</option>
+                            <option value="COLETOR">Coletor</option>
+                            <option value="RECICLADOR">Reciclador</option>
+                        </select>
+                    </div>
+
 
                     <button type="submit" className="btn btn-success w-100">
                         Registrar

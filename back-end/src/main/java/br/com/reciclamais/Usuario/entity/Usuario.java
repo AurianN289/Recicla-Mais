@@ -27,6 +27,6 @@ public class Usuario extends PersistenceEntity implements Serializable{
     private String senha;
 
     @Column(name = "tipousuario",  nullable = false)
-    private String tipoUsuario;
+    private String tipousuario;
     
 }
