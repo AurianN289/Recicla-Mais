@@ -39,20 +39,16 @@ function Login(){
             localStorage.setItem("usuario", JSON.stringify(usuario));
             const usuarioRecebido = JSON.parse(localStorage.getItem("usuario"));
 
-            console.log(usuarioRecebido);
-
-            console.log("usuario tipo: " + usuarioRecebido.tipousuario);
-
             if (usuarioRecebido.tipousuario === 'ADMIN') {
                 navigate('/admin');
-                console.log("tentou entrar em admin")
             }
 
             if (usuarioRecebido.tipousuario === 'RECICLADOR') {
                 navigate('/home-users');
-                console.log("tentou entrar em home-users")
-            }else{
-                //console.log("n conseguiu entrar como reciclador, pq? n sei" + JSON.stringify(usuario));
+            }
+
+            if (usuarioRecebido.tipousuario === 'COLETOR') {
+                navigate('/home-coletor');
             }
 
         } catch (error) {
