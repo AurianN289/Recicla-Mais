@@ -18,11 +18,13 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Usuario usuario) {
 
+
+
         try {
             Usuario usuarioLogado =
                     usuarioService.login(usuario.getEmail(), usuario.getSenha());
 
-
+            
 
             return ResponseEntity.ok(usuarioLogado);
 

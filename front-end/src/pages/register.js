@@ -37,7 +37,7 @@ function Register(){
                 body: JSON.stringify(usuario)
                 
             });
-            console.log(JSON.stringify(usuario));
+
             if (response.ok) {
                 alert("Usuário registrado com sucesso!");
             } else {

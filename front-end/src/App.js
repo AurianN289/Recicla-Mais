@@ -7,6 +7,7 @@ import AdminHome from './pages/homeAdmin';
 import RegisterResiduo from './pages/registerResiduo';
 import RegisterLocais from './pages/registerLocais';
 import RegisterCartaz from './pages/registerCartaz';
+import HomeUsers from './pages/homeUsers';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route path="/residuos/cadastrar" element={<RegisterResiduo />} />
         <Route path="/pontos-coleta/cadastrar" element={<RegisterLocais />} />
         <Route path="/cartazes/cadastrar" element={<RegisterCartaz />} />
+
+        <Route path="/home-users" element={<HomeUsers />} />
       </Routes>
     </BrowserRouter>
 

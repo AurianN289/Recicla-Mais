@@ -37,10 +37,22 @@ function Login(){
             const usuario = await response.json();
 
             localStorage.setItem("usuario", JSON.stringify(usuario));
+            const usuarioRecebido = JSON.parse(localStorage.getItem("usuario"));
 
-            if (usuario.tipoUsuario === 'ADMIN') {
+            console.log(usuarioRecebido);
+
+            console.log("usuario tipo: " + usuarioRecebido.tipousuario);
+
+            if (usuarioRecebido.tipousuario === 'ADMIN') {
                 navigate('/admin');
                 console.log("tentou entrar em admin")
+            }
+
+            if (usuarioRecebido.tipousuario === 'RECICLADOR') {
+                navigate('/home-users');
+                console.log("tentou entrar em home-users")
+            }else{
+                //console.log("n conseguiu entrar como reciclador, pq? n sei" + JSON.stringify(usuario));
             }
 
         } catch (error) {
