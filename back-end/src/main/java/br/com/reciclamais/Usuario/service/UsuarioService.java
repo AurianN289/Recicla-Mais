@@ -37,6 +37,12 @@ public class UsuarioService implements UsuarioIService {
     }
 
     @Override
+    public Usuario findById(Long id) {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    }
+
+    @Override
     public Usuario login(String email, String senha) {
 
         if (email == null || senha == null) {

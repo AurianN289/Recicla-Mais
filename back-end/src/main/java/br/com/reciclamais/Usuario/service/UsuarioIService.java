@@ -13,4 +13,6 @@ public interface UsuarioIService {
     public abstract List<Usuario> findAll() throws RuntimeException;
 
     Usuario login(String email, String senha) throws RuntimeException;
+
+    Usuario findById(Long id) throws RuntimeException;
 }

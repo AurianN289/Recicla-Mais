@@ -1,7 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function HomeUsers() {
+
+  const navigate = useNavigate();
 
   const [coletas, setColetas] = useState([]);
   const [pontos, setPontos] = useState([]);
@@ -52,7 +55,8 @@ function HomeUsers() {
             <div className="card-body">
               <div className="d-flex justify-content-between">
                 <h5>🚛 Minhas Coletas</h5>
-                <button className="btn btn-success btn-sm">
+                <button className="btn btn-success btn-sm"
+                  onClick={() => navigate('/coletas/cadastrar')}>
                   + Nova Coleta
                 </button>
               </div>

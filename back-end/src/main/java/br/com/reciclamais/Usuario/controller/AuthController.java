@@ -24,7 +24,7 @@ public class AuthController {
             Usuario usuarioLogado =
                     usuarioService.login(usuario.getEmail(), usuario.getSenha());
 
-            
+
 
             return ResponseEntity.ok(usuarioLogado);
 
